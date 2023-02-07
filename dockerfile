@@ -1,0 +1,7 @@
+FROM python:3.11
+EXPOSE 5000
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+ADD . .
+CMD ["flask", "run", "--host", "0.0.0.0"]
